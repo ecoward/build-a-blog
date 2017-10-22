@@ -1,7 +1,11 @@
-archtech88 [6 days ago] 
 {% extends "base.html" %}
 {% block content %}
-        
-<h3>{{blog.title}}</h3><br>{{blog.body}}
-
+<center><h1>Build a Blog</h1></center>
+    {% for blog in blogs %}
+    <ul>
+        <h2><a href='/blogpost?id={{ blog.id }}'>{{ blog.title }}</a></h2>
+        <p>{{ blog.body }}</p>
+        <hr/>
+    </ul>
+    {% endfor %}
 {% endblock %}
